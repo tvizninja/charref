@@ -1,0 +1,569 @@
+{
+  "schema_version": 5,
+  "vectors": [
+    {
+      "id": "sequence-halfwidth-ga",
+      "input": "ｶﾞ",
+      "expect": {
+        "codepoints": [
+          "U+FF76",
+          "U+FF9E"
+        ],
+        "exact_sequence_encodings": {
+          "cp932": "B6 DE",
+          "shift_jis": "B6 DE",
+          "euc_jp": "8E B6 8E DE"
+        },
+        "nfkc": "ガ",
+        "nfc": "ｶﾞ",
+        "nfd": "ｶﾞ",
+        "nfkd": "ガ"
+      }
+    },
+    {
+      "id": "sequence-jis0213-combining",
+      "input": "か゚",
+      "expect": {
+        "codepoints": [
+          "U+304B",
+          "U+309A"
+        ],
+        "exact_sequence_encodings": {
+          "shift_jis_2004": "82 F5",
+          "euc_jis_2004": "A4 F7",
+          "iso2022_jp_2004": "1B 24 28 51 24 77 1B 28 42"
+        }
+      }
+    },
+    {
+      "id": "ivs-tsuji-jis90",
+      "input": "辻󠄀",
+      "expect": {
+        "codepoints": [
+          "U+8FBB",
+          "U+E0100"
+        ],
+        "variation": {
+          "collection": "adobe-japan1",
+          "glyph-standard": "JIS90"
+        }
+      }
+    },
+    {
+      "id": "ivs-tsuji-jis2004",
+      "input": "辻󠄁",
+      "expect": {
+        "codepoints": [
+          "U+8FBB",
+          "U+E0101"
+        ],
+        "variation": {
+          "collection": "adobe-japan1",
+          "glyph-standard": "JIS2004"
+        }
+      }
+    },
+    {
+      "id": "direction-decode-only",
+      "expect": {
+        "test_system": "test_directional",
+        "position": "D1",
+        "direction": "decode",
+        "codepoints": [
+          "U+301C"
+        ]
+      }
+    },
+    {
+      "id": "direction-encode-only",
+      "expect": {
+        "test_system": "test_directional",
+        "position": "E1",
+        "direction": "encode",
+        "codepoints": [
+          "U+FF5E"
+        ]
+      }
+    },
+    {
+      "id": "unmapped-code-position",
+      "expect": {
+        "collection": "debug-structural",
+        "system": "test_jis_position",
+        "position": "1-01-02",
+        "unicode_mapping_count": 0
+      }
+    },
+    {
+      "id": "normalization-canonical-compose",
+      "input": "é",
+      "expect": {
+        "codepoints": [
+          "U+0065",
+          "U+0301"
+        ],
+        "nfc": "é",
+        "nfd": "é",
+        "nfkc": "é",
+        "nfkd": "é"
+      }
+    },
+    {
+      "id": "roundtrip-asymmetric-position",
+      "expect": {
+        "mapping_set": {
+          "system": "test_roundtrip",
+          "position": "81 60",
+          "mappings": [
+            {
+              "direction": "decode",
+              "kind": "standard",
+              "priority": 0,
+              "codepoints": [
+                "U+301C"
+              ]
+            },
+            {
+              "direction": "encode",
+              "kind": "vendor",
+              "priority": 0,
+              "codepoints": [
+                "U+FF5E"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ambiguous-decode-position",
+      "expect": {
+        "mapping_set": {
+          "system": "test_ambiguous",
+          "position": "A1",
+          "mappings": [
+            {
+              "direction": "decode",
+              "kind": "standard",
+              "priority": 0,
+              "codepoints": [
+                "U+301C"
+              ]
+            },
+            {
+              "direction": "decode",
+              "kind": "vendor",
+              "priority": 10,
+              "codepoints": [
+                "U+FF5E"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "multiple-code-positions-one-unicode",
+      "expect": {
+        "unicode_positions": {
+          "system": "test_alias",
+          "codepoint": "U+00A5",
+          "positions": [
+            {
+              "position": "A1",
+              "kind": "standard",
+              "priority": 0
+            },
+            {
+              "position": "A2",
+              "kind": "vendor",
+              "priority": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "variation-second-collection",
+      "input": "辻󠄂",
+      "expect": {
+        "codepoints": [
+          "U+8FBB",
+          "U+E0102"
+        ],
+        "variation": {
+          "collection": "test-ivd-alt",
+          "glyph-standard": "ALT-COLLECTION"
+        }
+      }
+    },
+    {
+      "id": "unicode-decomposition-export",
+      "input": "é",
+      "expect": {
+        "codepoints": [
+          "U+00E9"
+        ],
+        "decomposition": "0065 0301",
+        "nfd": "é",
+        "nfc": "é"
+      }
+    },
+    {
+      "id": "jis-revision-position-change",
+      "expect": {
+        "revision_positions": {
+          "codepoint": "U+8FBB",
+          "positions": [
+            {
+              "system": "test_jis_revision_old",
+              "position": "1-10-10"
+            },
+            {
+              "system": "test_jis_revision_new",
+              "position": "1-20-20"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "sequence-multiple-standard-positions",
+      "input": "か゚",
+      "expect": {
+        "codepoints": [
+          "U+304B",
+          "U+309A"
+        ],
+        "sequence_positions": {
+          "system": "test_seq_positions",
+          "positions": [
+            "1-30-30",
+            "2-40-40"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ivs-rendering-risk-metadata",
+      "input": "辻󠄀",
+      "expect": {
+        "codepoints": [
+          "U+8FBB",
+          "U+E0100"
+        ],
+        "variation_annotation": {
+          "collection": "adobe-japan1",
+          "key": "rendering-risk",
+          "value": "font-dependent"
+        }
+      }
+    },
+    {
+      "id": "ambiguous-hex-search-fixture",
+      "expect": {
+        "ambiguous_hex": "8140",
+        "unicode_candidate": "U+8140",
+        "position_bytes": "81 40",
+        "minimum_position_candidates": 2
+      }
+    },
+    {
+      "id": "unicode-sequence-emoji-zwj",
+      "input": "👨‍👩‍👧‍👦",
+      "expect": {
+        "codepoints": [
+          "U+1F468",
+          "U+200D",
+          "U+1F469",
+          "U+200D",
+          "U+1F467",
+          "U+200D",
+          "U+1F466"
+        ],
+        "sequence_entity": {
+          "key": "family-man-woman-girl-boy",
+          "type": "emoji-zwj"
+        }
+      }
+    },
+    {
+      "id": "unicode-sequence-regional-indicator",
+      "input": "🇯🇵",
+      "expect": {
+        "codepoints": [
+          "U+1F1EF",
+          "U+1F1F5"
+        ],
+        "sequence_entity": {
+          "key": "flag-japan",
+          "type": "regional-indicator"
+        }
+      }
+    },
+    {
+      "id": "unicode-sequence-emoji-modifier",
+      "input": "👋🏻",
+      "expect": {
+        "codepoints": [
+          "U+1F44B",
+          "U+1F3FB"
+        ],
+        "sequence_entity": {
+          "key": "waving-hand-light-skin-tone",
+          "type": "emoji-modifier"
+        }
+      }
+    },
+    {
+      "id": "unicode-sequence-keycap",
+      "input": "1️⃣",
+      "expect": {
+        "codepoints": [
+          "U+0031",
+          "U+FE0F",
+          "U+20E3"
+        ],
+        "sequence_entity": {
+          "key": "keycap-1",
+          "type": "emoji-keycap"
+        }
+      }
+    },
+    {
+      "id": "unicode-sequence-tag",
+      "input": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "expect": {
+        "codepoints": [
+          "U+1F3F4",
+          "U+E0067",
+          "U+E0062",
+          "U+E0065",
+          "U+E006E",
+          "U+E0067",
+          "U+E007F"
+        ],
+        "sequence_entity": {
+          "key": "flag-england",
+          "type": "emoji-tag"
+        }
+      }
+    },
+    {
+      "id": "special-zwj",
+      "input": "‍",
+      "expect": {
+        "codepoints": [
+          "U+200D"
+        ],
+        "general_category": "Cf"
+      }
+    },
+    {
+      "id": "special-zwnj",
+      "input": "‌",
+      "expect": {
+        "codepoints": [
+          "U+200C"
+        ],
+        "general_category": "Cf"
+      }
+    },
+    {
+      "id": "special-combining-mark",
+      "input": "́",
+      "expect": {
+        "codepoints": [
+          "U+0301"
+        ],
+        "general_category": "Mn",
+        "ccc": 230
+      }
+    },
+    {
+      "id": "special-private-use",
+      "input": "",
+      "expect": {
+        "codepoints": [
+          "U+E000"
+        ],
+        "general_category": "Co"
+      }
+    },
+    {
+      "id": "special-control-null",
+      "input": "\u0000",
+      "expect": {
+        "codepoints": [
+          "U+0000"
+        ],
+        "general_category": "Cc"
+      }
+    },
+    {
+      "id": "property-white-space",
+      "input": " ",
+      "expect": {
+        "codepoints": [
+          "U+0020"
+        ],
+        "properties": [
+          "White_Space"
+        ]
+      }
+    },
+    {
+      "id": "property-default-ignorable-zwj",
+      "input": "‍",
+      "expect": {
+        "codepoints": [
+          "U+200D"
+        ],
+        "properties": [
+          "Default_Ignorable_Code_Point",
+          "Join_Control"
+        ]
+      }
+    },
+    {
+      "id": "property-variation-selector",
+      "input": "️",
+      "expect": {
+        "codepoints": [
+          "U+FE0F"
+        ],
+        "properties": [
+          "Variation_Selector",
+          "Default_Ignorable_Code_Point"
+        ]
+      }
+    },
+    {
+      "id": "property-emoji",
+      "input": "😀",
+      "expect": {
+        "codepoints": [
+          "U+1F600"
+        ],
+        "properties": [
+          "Emoji",
+          "Emoji_Presentation",
+          "Extended_Pictographic"
+        ]
+      }
+    },
+    {
+      "id": "property-ideographic",
+      "input": "一",
+      "expect": {
+        "codepoints": [
+          "U+4E00"
+        ],
+        "properties": [
+          "Ideographic",
+          "Unified_Ideograph"
+        ]
+      }
+    },
+    {
+      "id": "property-deprecated",
+      "input": "ŉ",
+      "expect": {
+        "codepoints": [
+          "U+0149"
+        ],
+        "properties": [
+          "Deprecated"
+        ]
+      }
+    },
+    {
+      "id": "width-fullwidth-latin-a",
+      "input": "Ａ",
+      "expect": {
+        "codepoints": [
+          "U+FF21"
+        ],
+        "collection": "width-full",
+        "width_compat_target": "U+0041"
+      }
+    },
+    {
+      "id": "width-halfwidth-katakana-a",
+      "input": "ｱ",
+      "expect": {
+        "codepoints": [
+          "U+FF71"
+        ],
+        "collection": "width-half",
+        "width_compat_target": "U+30A2"
+      }
+    },
+    {
+      "id": "cp932-eudc-first",
+      "input": "",
+      "expect": {
+        "codepoints": [
+          "U+E000"
+        ],
+        "collection": "unicode-pua-cp932",
+        "cp932_bytes": "F0 40",
+        "eudc_collection": "cp932-eudc"
+      }
+    },
+    {
+      "id": "cp932-eudc-last",
+      "input": "",
+      "expect": {
+        "codepoints": [
+          "U+E757"
+        ],
+        "collection": "unicode-pua-cp932",
+        "cp932_bytes": "F9 FC",
+        "eudc_collection": "cp932-eudc"
+      }
+    },
+    {
+      "id": "cp932-extension-taka",
+      "input": "髙",
+      "expect": {
+        "codepoints": [
+          "U+9AD9"
+        ],
+        "collection": "cp932-extensions"
+      }
+    },
+    {
+      "id": "arib-fixed-squared-hv",
+      "input": "🅊",
+      "expect": {
+        "codepoints": [
+          "U+1F14A"
+        ],
+        "collection": "arib-fixed"
+      }
+    },
+    {
+      "id": "cp932-jis0213-reassigned-kou",
+      "input": "硤",
+      "expect": {
+        "codepoints": [
+          "U+7864"
+        ],
+        "collection": "cp932-jis0213-reassigned",
+        "issue": "cp932-jis0213-reassignment",
+        "cp932_encode_bytes": "EE 5E",
+        "cp932_decode_bytes": [
+          "EE 5E",
+          "FB 7A"
+        ],
+        "shift_jis_2004_bytes": "F6 C4",
+        "cp932_f6c4_unicode": "U+E4EB",
+        "jis_position": {
+          "system": "jis_x_0213_2004",
+          "position": "2-82-38"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Generated databases and intermediate web data
+/db/*.sqlite
+/db/*.sqlite-*
+/dist/webdata.json
+/dist/*.json.gz
+
+# Release bundles / local exports
+*.zip
+/release/
+/releases/
+charref-v*.sqlite
+charref-v*.zip
+
+# Downloaded upstream data: reproducible via scripts/fetch_sources.py
+# Keep custom curated data and test vectors under data/custom and data/test-vectors.
+/data/raw/
+/data/bootstrap/
+
+# Temporary build/site directories
+/_site/
+/.pages/
+/tmp/
+/temp/
+
+# Logs
+*.log

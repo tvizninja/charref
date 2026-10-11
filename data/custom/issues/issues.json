@@ -1,0 +1,32 @@
+{
+  "issues": [
+    {
+      "key": "sjis-trailing-5c",
+      "title": "Shift_JIS 2バイト目 0x5C",
+      "category": "escape",
+      "severity": "warning",
+      "description": "Shift_JIS系で第2バイトが0x5Cとなるため、古い処理系や不適切なエスケープ処理で問題になることがある。"
+    },
+    {
+      "key": "wave-dash-mapping",
+      "title": "波ダッシュ／全角チルダ対応問題",
+      "category": "mapping",
+      "severity": "warning",
+      "description": "JIS系とMicrosoft系の対応表・実装差により、U+301CとU+FF5Eの扱いが異なる。"
+    },
+    {
+      "key": "jis90-jis2004-glyph-change",
+      "title": "JIS90/JIS2004字形差",
+      "category": "glyph",
+      "severity": "info",
+      "description": "同一Unicodeコードポイントでも、JIS規格改訂やフォントにより例示字形が異なる場合がある。"
+    },
+    {
+      "key": "cp932-jis0213-reassignment",
+      "title": "CP932拡張とJIS X 0213で符号位置が異なる",
+      "category": "mapping-history",
+      "severity": "info",
+      "description": "CP932のJIS X 0201/0208外拡張で表現され、JIS X 0213にも収録された文字のうち、CP932とShift_JIS-2004で異なるバイト位置を使う。CP932とShift_JIS-2004は別の符号化体系として扱う必要がある。"
+    }
+  ]
+}

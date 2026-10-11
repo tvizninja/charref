@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "vectors": [
+    {
+      "id": "basic-ascii-A",
+      "input": "A",
+      "tags": [
+        "basic",
+        "ascii"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+0041"
+        ],
+        "encodings": {
+          "utf-8": "41",
+          "utf-16le": "41 00",
+          "utf-16be": "00 41",
+          "cp932": "41",
+          "shift_jis": "41"
+        }
+      }
+    },
+    {
+      "id": "basic-hiragana-a",
+      "input": "あ",
+      "tags": [
+        "basic",
+        "jis"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+3042"
+        ],
+        "encodings": {
+          "utf-8": "E3 81 82",
+          "cp932": "82 A0",
+          "shift_jis": "82 A0",
+          "euc_jp": "A4 A2",
+          "iso2022_jp": "1B 24 42 24 22 1B 28 42",
+          "shift_jis_2004": "82 A0",
+          "euc_jis_2004": "A4 A2",
+          "iso2022_jp_2004": "1B 24 42 24 22 1B 28 42"
+        },
+        "unicode_age": "1.1",
+        "jis_positions": [
+          {
+            "system": "jis_x_0208",
+            "position": "04-02"
+          },
+          {
+            "system": "jis_x_0213_2004",
+            "position": "1-04-02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cjk-taka-standard",
+      "input": "高",
+      "tags": [
+        "cjk",
+        "variant"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+9AD8"
+        ],
+        "encodings": {
+          "cp932": "8D 82",
+          "shift_jis": "8D 82"
+        }
+      }
+    },
+    {
+      "id": "cjk-taka-variant",
+      "input": "髙",
+      "tags": [
+        "cjk",
+        "variant",
+        "cp932-extension"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+9AD9"
+        ],
+        "encodings": {
+          "cp932": "EE E0",
+          "shift_jis": null
+        }
+      }
+    },
+    {
+      "id": "compat-saki-standard",
+      "input": "崎",
+      "tags": [
+        "cjk",
+        "variant"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+5D0E"
+        ],
+        "encodings": {
+          "cp932": "8D E8",
+          "shift_jis": "8D E8",
+          "euc_jp": "BA EA",
+          "iso2022_jp": "1B 24 42 3A 6A 1B 28 42"
+        }
+      }
+    },
+    {
+      "id": "compat-saki-fa11",
+      "input": "﨑",
+      "tags": [
+        "cjk",
+        "compatibility",
+        "cp932-extension"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FA11"
+        ],
+        "encodings": {
+          "cp932": "ED 95",
+          "shift_jis": null,
+          "shift_jis_2004": "98 92",
+          "euc_jis_2004": "CF F2",
+          "iso2022_jp_2004": "1B 24 28 51 4F 72 1B 28 42"
+        },
+        "unicode_age": "1.1",
+        "jis_positions": [
+          {
+            "system": "jis_x_0213_2004",
+            "position": "1-47-82"
+          }
+        ]
+      }
+    },
+    {
+      "id": "compat-tsuka",
+      "input": "塚",
+      "tags": [
+        "cjk",
+        "compatibility",
+        "normalization"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+585A"
+        ],
+        "encodings": {
+          "cp932": "92 CB",
+          "shift_jis": "92 CB",
+          "shift_jis_2004": "92 CB",
+          "euc_jis_2004": "C4 CD",
+          "iso2022_jp_2004": "1B 24 42 44 4D 1B 28 42"
+        }
+      }
+    },
+    {
+      "id": "compat-tsuka-fa10",
+      "input": "塚",
+      "tags": [
+        "cjk",
+        "compatibility",
+        "normalization",
+        "cp932-extension"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FA10"
+        ],
+        "encodings": {
+          "cp932": "ED 80",
+          "shift_jis": null,
+          "shift_jis_2004": "88 76",
+          "euc_jis_2004": "AF D7",
+          "iso2022_jp_2004": "1B 24 28 51 2F 57 1B 28 42"
+        }
+      }
+    },
+    {
+      "id": "supplementary-tsuchiyoshi",
+      "input": "𠮷",
+      "tags": [
+        "supplementary",
+        "utf16"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+20BB7"
+        ],
+        "encodings": {
+          "utf-8": "F0 A0 AE B7",
+          "utf-16le": "42 D8 B7 DF",
+          "utf-16be": "D8 42 DF B7",
+          "cp932": null,
+          "shift_jis": null
+        },
+        "unicode_age": "3.1"
+      }
+    },
+    {
+      "id": "halfwidth-a",
+      "input": "ｱ",
+      "tags": [
+        "halfwidth",
+        "jis-x-0201"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FF71"
+        ],
+        "encodings": {
+          "cp932": "B1",
+          "shift_jis": "B1",
+          "euc_jp": "8E B1"
+        },
+        "unicode_age": "1.1",
+        "jis_positions": [
+          {
+            "system": "jis_x_0201_kana",
+            "position": "0x31"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fullwidth-a",
+      "input": "ア",
+      "tags": [
+        "katakana"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+30A2"
+        ],
+        "encodings": {
+          "cp932": "83 41",
+          "shift_jis": "83 41"
+        }
+      }
+    },
+    {
+      "id": "halfwidth-ga-sequence",
+      "input": "ｶﾞ",
+      "tags": [
+        "halfwidth",
+        "sequence",
+        "normalization"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FF76",
+          "U+FF9E"
+        ],
+        "encodings": {
+          "cp932": "B6 DE",
+          "shift_jis": "B6 DE",
+          "shift_jis_2004": "B6 DE",
+          "euc_jis_2004": "8E B6 8E DE",
+          "iso2022_jp_2004": null
+        },
+        "nfkc": "ガ"
+      }
+    },
+    {
+      "id": "fullwidth-ga",
+      "input": "ガ",
+      "tags": [
+        "katakana",
+        "normalization"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+30AC"
+        ],
+        "encodings": {
+          "cp932": "83 4B",
+          "shift_jis": "83 4B"
+        }
+      }
+    },
+    {
+      "id": "sjis-bad-hyo",
+      "input": "表",
+      "tags": [
+        "sjis-bad",
+        "trail-5c"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+8868"
+        ],
+        "encodings": {
+          "cp932": "95 5C",
+          "shift_jis": "95 5C",
+          "euc_jp": "C9 BD",
+          "iso2022_jp": "1B 24 42 49 3D 1B 28 42"
+        },
+        "issues": [
+          "sjis-trailing-5c"
+        ]
+      }
+    },
+    {
+      "id": "sjis-bad-no",
+      "input": "能",
+      "tags": [
+        "sjis-bad",
+        "trail-5c"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+80FD"
+        ],
+        "encodings": {
+          "cp932": "94 5C",
+          "shift_jis": "94 5C"
+        },
+        "issues": [
+          "sjis-trailing-5c"
+        ]
+      }
+    },
+    {
+      "id": "sjis-bad-so",
+      "input": "ソ",
+      "tags": [
+        "sjis-bad",
+        "trail-5c"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+30BD"
+        ],
+        "encodings": {
+          "cp932": "83 5C",
+          "shift_jis": "83 5C"
+        },
+        "issues": [
+          "sjis-trailing-5c"
+        ]
+      }
+    },
+    {
+      "id": "wave-dash",
+      "input": "〜",
+      "tags": [
+        "mapping-issue",
+        "wave-dash"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+301C"
+        ],
+        "encodings": {
+          "cp932": "81 60",
+          "shift_jis": "81 60"
+        },
+        "issues": [
+          "wave-dash-mapping"
+        ]
+      }
+    },
+    {
+      "id": "fullwidth-tilde",
+      "input": "～",
+      "tags": [
+        "mapping-issue",
+        "wave-dash"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FF5E"
+        ],
+        "encodings": {
+          "cp932": "81 60",
+          "shift_jis": null
+        },
+        "issues": [
+          "wave-dash-mapping"
+        ]
+      }
+    },
+    {
+      "id": "double-vertical-line",
+      "input": "‖",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+2016"
+        ],
+        "encodings": {
+          "cp932": "81 61",
+          "shift_jis": "81 61"
+        }
+      }
+    },
+    {
+      "id": "parallel-to",
+      "input": "∥",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+2225"
+        ],
+        "encodings": {
+          "cp932": "81 61",
+          "shift_jis": null
+        }
+      }
+    },
+    {
+      "id": "minus-sign",
+      "input": "−",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+2212"
+        ],
+        "encodings": {
+          "cp932": "81 7C",
+          "shift_jis": "81 7C"
+        }
+      }
+    },
+    {
+      "id": "fullwidth-hyphen-minus",
+      "input": "－",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FF0D"
+        ],
+        "encodings": {
+          "cp932": "81 7C",
+          "shift_jis": null
+        }
+      }
+    },
+    {
+      "id": "horizontal-bar",
+      "input": "―",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+2015"
+        ],
+        "encodings": {
+          "cp932": "81 5C",
+          "shift_jis": "81 5C"
+        }
+      }
+    },
+    {
+      "id": "em-dash",
+      "input": "—",
+      "tags": [
+        "mapping-issue"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+2014"
+        ],
+        "encodings": {
+          "cp932": null,
+          "shift_jis": null
+        }
+      }
+    },
+    {
+      "id": "emoji-unencodable",
+      "input": "😀",
+      "tags": [
+        "unencodable",
+        "supplementary"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+1F600"
+        ],
+        "encodings": {
+          "utf-8": "F0 9F 98 80",
+          "cp932": null,
+          "shift_jis": null
+        },
+        "unicode_age": "6.1"
+      }
+    },
+    {
+      "id": "yen-sign",
+      "input": "¥",
+      "tags": [
+        "yen-backslash"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+00A5"
+        ],
+        "encodings": {
+          "cp932": null,
+          "shift_jis": "5C"
+        }
+      }
+    },
+    {
+      "id": "backslash",
+      "input": "\\",
+      "tags": [
+        "yen-backslash"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+005C"
+        ],
+        "encodings": {
+          "cp932": "5C",
+          "shift_jis": "5C"
+        }
+      }
+    },
+    {
+      "id": "fullwidth-yen",
+      "input": "￥",
+      "tags": [
+        "yen-backslash"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+FFE5"
+        ],
+        "encodings": {
+          "cp932": "81 8F",
+          "shift_jis": "81 8F"
+        }
+      }
+    },
+    {
+      "id": "jis2004-tsuji",
+      "input": "辻",
+      "tags": [
+        "jis-glyph",
+        "jis2004",
+        "ivs"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+8FBB"
+        ],
+        "issues": [
+          "jis90-jis2004-glyph-change"
+        ],
+        "rendering": {
+          "font_dependent": true
+        },
+        "unicode_age": "1.1",
+        "jis_positions": [
+          {
+            "system": "jis_x_0208",
+            "position": "36-52"
+          },
+          {
+            "system": "jis_x_0213_2004",
+            "position": "1-36-52"
+          }
+        ],
+        "encodings": {
+          "cp932": "92 D2",
+          "shift_jis": "92 D2"
+        }
+      }
+    },
+    {
+      "id": "jis2004-katsu",
+      "input": "葛",
+      "tags": [
+        "jis-glyph",
+        "jis2004",
+        "ivs"
+      ],
+      "expect": {
+        "codepoints": [
+          "U+845B"
+        ],
+        "issues": [
+          "jis90-jis2004-glyph-change"
+        ],
+        "rendering": {
+          "font_dependent": true
+        },
+        "encodings": {
+          "cp932": "8A 8B",
+          "shift_jis": "8A 8B"
+        }
+      }
+    }
+  ]
+}

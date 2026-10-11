@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CharRef Prototype</title><style>/*__CSS__*/</style></head>
+<body>
+<header class="topbar">
+  <h1>CharRef</h1>
+  <div class="searchbar"><input id="q" autocomplete="off" placeholder="文字 / U+XXXX / Hex"><button id="go">検索</button></div>
+</header>
+<main>
+  <div id="datasetNotice"></div>
+  <section id="detailSection" hidden><div id="result"></div></section>
+  <section class="browser">
+    <div class="browser-head">
+      <div class="collection-picker" id="collectionPicker">
+        <button id="collectionButton" class="collection-button" aria-haspopup="listbox" aria-expanded="false">文字集合を選択</button>
+        <div id="collectionPanel" class="collection-panel" hidden>
+          <input id="collectionFilter" autocomplete="off" placeholder="文字集合を絞り込み">
+          <div id="collectionOptions" class="collection-options" role="listbox"></div>
+        </div>
+      </div>
+      <div class="browser-summary"><div><strong id="collectionTitle">Unicode</strong><span id="collectionCount"></span></div><div id="collectionDescription" class="collection-description"></div></div>
+      <div class="view-toggle" aria-label="一覧表示">
+        <button id="gridMode" class="active" title="グリッド表示">▦ グリッド</button>
+        <button id="tableMode" title="テーブル表示">☰ テーブル</button>
+      </div>
+    </div>
+    <div id="listViewport" class="list-viewport" tabindex="0"><div id="listCanvas" class="list-canvas"></div></div>
+  </section>
+</main>
+<script id="dataset" type="application/octet-stream">__DATA__</script>
+<script>/*__JS__*/</script>
+</body></html>
